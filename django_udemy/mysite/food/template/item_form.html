@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <div class="card-title">
+                        Add Items
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            {{ form.item_name.label_tag }}
+                            {{ form.item_name }}
+                            {{ form.item_name.errors }}
+                        </div>
+
+                        <!-- Item Description Field -->
+                        <div class="form-group mb-3">
+                            {{ form.item_desc.label_tag }}
+                            {{ form.item_desc }}
+                            {{ form.item_desc.errors }}
+                        </div>
+
+                        <!-- Item Price Field -->
+                        <div class="form-group mb-3">
+                            {{ form.item_price.label_tag }}
+                            {{ form.item_price }}
+                            {{ form.item_price.errors }}
+                        </div>
+
+                        <!-- Item Image Field -->
+                        <div class="form-group mb-3">
+                            {{ form.item_image.label_tag }}
+                            {{ form.item_image }}
+                            {{ form.item_image.errors }}
+                        </div>
+
+                        <button class="btn btn-info" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>     
+    </div>
+</div>
+{% endblock %}
